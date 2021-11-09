@@ -44,11 +44,11 @@ function copyAssets() {
 
       function searchDepth(item) {
         if (item.isFile()) {
-          fs.readFile(`${assets}/${file.name}/${item.name}`, 'utf-8', (err, data) => {
+          fs.readFile(`${assets}/${file.name}/${item.name}`, (err, data) => {
             if (err) {
               throw err;
             } else {
-              fs.writeFile(`${assets2Level}/${file.name}/${item.name}`, data, 'utf-8', err => {
+              fs.writeFile(`${assets2Level}/${file.name}/${item.name}`, data, err => {
                 if (err) throw err;
               });
             }
